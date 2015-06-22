@@ -12,21 +12,10 @@ function(Marionette, config) {
 	return Marionette.LayoutView.extend({
 		template: 'app/base/header/tpl-header.html',
 		className: 'header',
-		events: {
-			'click #logout' : 'logout',
-		},
 
-		logout: function(){
-			$.ajax({
-				context: this,
-				url: config.coreUrl + 'security/logout'
-			}).done( function() {
-				Backbone.history.navigate('login', {trigger: true});
-			});
-		},
 
 		onShow: function(){
-			
+			console.log('show');
 		},
 	});
 });

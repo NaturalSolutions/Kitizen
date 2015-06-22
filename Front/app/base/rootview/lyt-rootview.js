@@ -1,5 +1,5 @@
-define(['marionette', 'transition-region'],
-function(Marionette, TransitionRegion) {
+define(['marionette', 'transition-region', './base/header/lyt-header', './base/home/lyt-home'],
+function(Marionette, TransitionRegion, LytHeader, LytHome) {
 	'use strict';
 
 	return Marionette.LayoutView.extend({
@@ -14,5 +14,15 @@ function(Marionette, TransitionRegion) {
 			}),
 			rgFooter: 'footer'
 		},
+
+		render : function(options){
+			Marionette.LayoutView.prototype.render.apply(this, options);
+			this.display();
+		},
+
+		display: function(){
+			this.rgMain.show(new LytHome());
+			this.rgHeader.show( new LytHeader());
+		}
 	});
 });

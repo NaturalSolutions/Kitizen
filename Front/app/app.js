@@ -1,5 +1,5 @@
-define(['marionette', 'lyt-rootview', 'router', 'controller'],
-function(Marionette, Lyt_rootview, Router, Controller) {
+define(['marionette', 'lyt-rootview', 'router', 'controller', 'models/taxon','collections/taxon_coll'],
+function(Marionette, Lyt_rootview, Router, Controller, Model, Collection) {
 
 
 	var app = {}, JST = window.JST = window.JST || {};
@@ -16,7 +16,10 @@ function(Marionette, Lyt_rootview, Router, Controller) {
 		app.rootView.render();
 		app.controller = new Controller({app : app});
 		app.router = new Router({controller: app.controller, app: app});
-		
+
+		app.model = new Model();
+		app.collection = new Collection();
+
 		Backbone.history.start();
 	});
 

@@ -22,10 +22,7 @@ function(Marionette) {
 
 		// Same as above, except this time we trigger 'animateOut'
 		animateOut: function() {
-			//this.$el.css({'position' : 'absolute'});
 			this.$el.removeClass('zoomInUp');
-
-			//this.$el.addClass('zoomOutDown');
 
 			this.$el.animate(
 				{ opacity : 0 },
@@ -35,6 +32,7 @@ function(Marionette) {
 		},
 		onShow : function(options) {
 			this.$el.i18n();
+			console.log('HOME');
 		}
 	});
 });

@@ -1,8 +1,6 @@
-define(['marionette', 'config', 
+define(['marionette', 'config','./base/home/lyt-home'
 
-	'./base/home/lyt-home',
-
-],function( Marionette, config, 
+],function( Marionette, config,
 	LytHome
 
 ){
@@ -17,6 +15,7 @@ define(['marionette', 'config',
 
 		home: function() {
 			Backbone.history.navigate('');
+			console.log(this.options.app.model);
 			this.rgMain.show(new LytHome());
 		},
 
